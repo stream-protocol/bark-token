@@ -1,0 +1,23 @@
+[package]
+name = "bark_program"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anchor-lang = "0.19.0"
+solana-program = "1.10.0"
+
+[[programs]]
+name = "transferhook"
+id = "bark8LXsP1oCtaFM2KdQpBvXgEVWPZ1nm5hecFFUFeX"
+
+[provider]
+cluster = "Localnet"
+wallet = "./id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+
+[test.validator]
+ticks_per_slot = 2
+slots_per_epoch = "64"

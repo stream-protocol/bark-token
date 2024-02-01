@@ -63,18 +63,22 @@ Before you begin, make sure you have the following tools installed:
 - [Solana CLI](https://docs.solana.com/cli/install)
 - [Anchor](https://project-serum.github.io/anchor/getting-started/installation.html)
 
+```bash
+cargo install --git https://github.com/project-serum/anchor --branch main anchor-cli --locked
+```
+
 ### Installation
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/bark-community/bark-token/bark-token-program.git
+    git clone https://github.com/bark-community/bark-token/bark_token_program.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd bark-token && bark-token-program
+    cd bark_token_program
     ```
 
 3. Build the program:

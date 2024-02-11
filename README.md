@@ -1,149 +1,134 @@
-# Bark Token Program
+# BARK Documentation
 
-Bark Token (BARK) is a Solana-based token program built with the Anchor framework, implementing the Solana 2022-Token Standard (Solana Extension). This program is created to manage Bark Tokens, a digital asset on the Solana blockchain, and is driven by community contributions.
+## Overview
 
-## Features:
+BARK Token (BARK) is a decentralized digital asset built on the Solana blockchain, managed by a Solana-based token program. Leveraging the power of the Rust and TypeScript frameworks, BARK aims to provide a robust and community-driven project for handling digital assets on Solana. BARK is a decentralized "meme" token built on the Solana blockchain. It aims to provide a secure and efficient way for users to transfer and manage their assets within the BARK ecosystem.
 
-- **Token Creation:** Create Bark Tokens with details such as name, symbol, and maximum supply.
-- **Minting:** Mint additional Bark tokens to the existing supply.
-- **Burning:** Burn Bark tokens to reduce the total supply.
-- **Pausing:** Pause and resume Bark token transfers as needed.
-- **Transaction Fees:** Collect transaction fees and distribute them to a "community" treasury wallet.
+## Table of Contents
 
-## Bark Token (BARK) Tokenomics (draft)
+- [BARK Documentation](#bark-documentation)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [How BARK Works](#how-bark-works)
+    - [Minting](#minting)
+    - [Minting Process Overview](#minting-process-overview)
+    - [Benefits of Minting](#benefits-of-minting)
+    - [Next Steps](#next-steps)
+  - [BARK Transfer Fees](#bark-transfer-fees)
+    - [Fee Structure](#fee-structure)
+    - [Utilization of Fees](#utilization-of-fees)
+    - [Transparent Governance](#transparent-governance)
+    - [Fee Management](#fee-management)
+    - [Token Metadata](#token-metadata)
+  - [Architecture](#architecture)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-#### Token Details:
+## Introduction
 
-| Attribute           | Value                  |
-|---------------------|------------------------|
-| Token Name          | Bark Token (BARK)      |
-| Token Symbol        | BARK                   |
-| Token Decimals      | 9                      |
-| Maximum Supply      | 20,000,000,000         |
-| Burning Rate        | 2% (Quarterly)         |
-| Fee Decimals        | 2                      |
-| Fee Symbol          | BARK_FEE               |
-| Fee Percentage      | 2%                     |
-| Treasury Wallet     | 8DosypWP5rR5REnpkjw... |
-| Program Address     | [Program Address] |
+BARK is a utility token designed for seamless transactions and fee management within the Solana blockchain. It leverages Solana's high throughput and low transaction costs to provide users with a fast and cost-effective experience.
 
-**Owner:** bark8LXsP1oCtaFM2KdQpBvXgEVWPZ1nm5hecFFUFeX
-https://solscan.io/account/bark8LXsP1oCtaFM2KdQpBvXgEVWPZ1nm5hecFFUFeX
+## How BARK Works
 
-#### Allocation and Distributions
+### Minting
 
-### 2. Allocation and Distributions
+The BARK introduces a total supply of 20 billion tokens, following the standards set by the SPL Token 2022 standard on the Solana blockchain. The minting process is a pivotal step in bringing these tokens into existence. It involves creating new token accounts and initializing them with specific parameters, ensuring a secure and well-configured foundation for the BARK ecosystem.
 
-| Category            | Percentage             |
-|---------------------|------------------------|
-| Public Sale         | 30%                    |
-| Development         | 20%                    |
-| Core Team           | 15%                    |
-| Reserve             | 5%                     |
-| Liquidity Pool      | 10%                    |
-| Partnership         | 10%                    |
-| Treasury            | 5%                     |
+### Minting Process Overview
 
+1. **Creation of Token Accounts**: The minting process begins with the creation of new token accounts on the Solana blockchain. These accounts serve as containers for the newly minted BARK tokens.
 
-#### Vesting Schedule and Terms
+2. **Initialization with Parameters**: Each token account is initialized with specific parameters that define its behavior within the BARK ecosystem. Key parameters include the mint authority, transfer fee configuration, and other essential settings.
 
-| Category            | Vesting Period         | Cliff Period           |
-|---------------------|------------------------|------------------------|
-| Team                | 3 years                | 1 year                 |
-| Ecosystem           | 2 years                | None                   |
-| Reserve             | 1 year                 | None                   |
+3. **Mint Authority Assignment**: The mint authority plays a crucial role in the minting process. It is responsible for controlling the creation and distribution of BARK tokens. The mint authority ensures the integrity and security of the minting process.
 
-## Getting Started
+4. **Transfer Fee Configuration**: During initialization, transfer fee configurations are set to define the dynamic fee calculation for future token transfers. This includes specifying the fee basis (300 points or 3%) and a maximum fee limit (8%).
 
-### Prerequisites
+### Benefits of Minting
 
-Before you begin, make sure you have the following tools installed:
+- **Controlled BARK Max Supply**: The minting process allows for the precise control and issuance of BARK, ensuring a transparent and controlled token supply.
 
-- [Rust](https://www.rust-lang.org/)
-- [Solana CLI](https://docs.solana.com/cli/install)
-- [Anchor](https://project-serum.github.io/anchor/getting-started/installation.html)
+- **Configurable Parameters**: The initialization phase enables the configuration of various parameters, allowing for flexibility in adapting to community needs and evolving requirements.
 
-```bash
-cargo install --git https://github.com/project-serum/anchor --branch main anchor-cli --locked
-```
+- **Secure Mint Authority**: Assigning a mint authority ensures the security and integrity of the minting process, preventing unauthorized creation of tokens.
 
-### Installation
+### Next Steps
 
-1. Clone the repository:
+With the successful completion of the minting process, the BARK is ready to be utilized within the Solana ecosystem. Users can engage in transactions, transfers, and community-driven activities, contributing to the growth and vibrancy of the BARK community.
 
-    ```bash
-    git clone https://github.com/bark-community/bark-token/bark_token_program.git
-    ```
+## BARK Transfer Fees
 
-2. Navigate to the project directory:
+Users can seamlessly transfer BARK tokens within the Solana network, with the transfer functionality incorporating a dynamic fee calculation. The fee structure is designed to support various aspects of the BARK community, including project developments, community initiatives, taxes, burning, and charity.
 
-    ```bash
-    cd bark_token_program
-    ```
+### Fee Structure
 
-3. Build the program:
+- **Dynamic Fee Calculation**: The transfer fees are dynamically calculated based on a fee basis of 300 points (3% of the transfer amount). This mechanism ensures a fair and proportional fee assessment on transactions.
 
-    ```bash
-    cargo build --release
-    ```
+- **Maximum Fee Limit**: To provide flexibility and protect users, a maximum fee limit is set at 8% of the transfer amount. This upper limit ensures that fees remain within reasonable bounds even during market fluctuations.
 
-4. Deploy the program to Solana:
+### Utilization of Fees
 
-    ```bash
-    solana program deploy target/deploy/bark_token.so
-    ```
+The collected fees from BARK token transfers serve multiple purposes within the BARK community:
 
-### Usage
+1. **Project Developments**: A portion of the fees is allocated to fund ongoing and future developments of the BARK project, ensuring continuous improvements and innovation.
 
-1. Initialize the Bark Token:
+2. **Community Initiatives**: BARK is committed to fostering a vibrant and engaged community. The transfer fees contribute to community initiatives, events, and activities that enhance user participation.
 
-    ```bash
-    solana-tokens create-account <MINT_ADDRESS> <OWNER_ADDRESS> bark_token_program_id
-    ```
+3. **Tax Compliance**: A portion of the fees may be allocated for tax compliance, ensuring that the BARK community operates within legal frameworks and regulatory requirements.
 
-2. Mint new tokens:
+4. **Token Burning**: Some of the collected fees may be designated for token burning, reducing the token supply over time. Token burning is a strategic mechanism that can contribute to scarcity and potentially influence token value.
 
-    ```bash
-    solana-tokens mint <MINT_ADDRESS> <DEST_ADDRESS> <AMOUNT> --authority <AUTHORITY_ADDRESS>
-    ```
+5. **Charitable Contributions**: BARK is dedicated to making a positive impact beyond the crypto space. A portion of the fees may be allocated for charitable contributions, supporting causes aligned with the values of the BARK community.
 
-3. Burn tokens:
+### Transparent Governance
 
-    ```bash
-    solana-tokens burn <MINT_ADDRESS> <SOURCE_ADDRESS> <AMOUNT> --authority <AUTHORITY_ADDRESS>
-    ```
+The allocation of transfer fees is subject to transparent governance within the BARK community. Periodic updates and reports will be provided to ensure openness and accountability in the utilization of funds.
 
-4. Change the paused state:
+By participating in BARK token transfers, users contribute to the growth, sustainability, and positive impact of the BARK community.
 
-    ```bash
-    solana-tokens change-paused-state --authority <AUTHORITY_ADDRESS> --state <STATE_ADDRESS> --paused <true/false>
-    ```
+### Fee Management
 
-5. Collect transaction fees:
+BARK implements a flexible fee management system. Users can set the transfer fee basis points and the maximum fee for transactions. Additionally, the architecture supports burning a 2% of BARK tokens quarterly.
 
-    ```bash
-    solana-tokens collect-fees --treasury <TREASURY_ADDRESS> --state <STATE_ADDRESS>
-    ```
-## Todo List
+### Token Metadata
 
-### Token Extensions
+The BARK token includes metadata such as name, symbol, URI, and social links. This metadata enhances the token's visibility and provides users with additional information.
 
-Mint extensions to be implemented:
+## Architecture
 
-- [ ] **Confidential Transfers**
-- [ ] **Transfer Fees**
-- [ ] **Closing Mint**
-- [ ] **Interest-bearing Tokens**
-- [ ] **Non-transferable Tokens**
-- [ ] **Permanent Delegate**
-- [ ] **Transfer Hook**
-- [ ] **Metadata Pointer**
-- [ ] **Metadata**
+BARK follows the SOL Token standard and leverages the Solana blockchain's features for efficient and secure token management. The key components include:
+
+- **Mint Account**: Represents the BARK token mint, containing information about the token supply, owner, and associated transfer fee configuration.
+
+- **Token Accounts**: Users create associated token accounts to store and manage their BARK tokens. These accounts include information about the token owner, delegate, and token balance.
+
+- **Transfer Fee Configuration**: A specialized extension to the token mint that allows users to configure the transfer fees associated with the BARK token.
+
+- **Solana Blockchain**: BARK is built on the Solana blockchain, leveraging its speed and low transaction costs for efficient token transfers.
+
+## Installation
+
+To use the BARK token, follow these steps:
+
+1. **Set Up a Solana Wallet**: Ensure you have a Solana wallet to interact with the BARK token.
+
+2. **Connect to Solana Devnet**: Connect your wallet to the Solana Devnet cluster to test BARK token functionalities.
+
+3. **Mint BARK Tokens**: Mint BARK tokens using the provided scripts or interact with the token smart contract.
+
+4. **Transfer and Manage BARK Tokens**: Utilize your Solana wallet to transfer, manage, and configure fees for BARK tokens.
+
+## Usage
+
+For detailed instructions on using the BARK token, refer to the [BARK Token User Guide](#).
 
 ## Contributing
 
-Bark is a community-focused project, and contributions are welcome! Please follow our [contribution guidelines](CONTRIBUTING.md).
+We welcome contributions from the community. If you find any issues or want to enhance the BARK token functionality, please open an issue or submit a pull request on our [GitHub repository](https://github.com/bark-protocol/bark-token).
 
 ## License
 
-MIT License - see the [LICENSE](LICENSE) file for details.
+BARK is released under the [MIT License](LICENSE.md).

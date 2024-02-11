@@ -1,5 +1,4 @@
-```markdown
-# Bark Token
+# Bark Token Dev
 
 Bark Token is a Rust-based Solana token program created using the Anchor framework.
 

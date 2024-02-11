@@ -1,0 +1,36 @@
+[package]
+name = "bark_token"
+version = "1.0.0"
+description = "Created with Rust"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "bark_token"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+ahash = "=0.8.6"
+solana-sdk = "1.18.1"
+solana/spl-token: "0.4.0"
+solana-program = "1.16.27"
+spl-token-metadata = "1.0"
+sha2-const = "0.1.2"
+
+spl-transfer-hook-interface = { version = "0.3" }
+spl-tlv-account-resolution = { version = "0.4" }
+spl-pod = "0.1.0"
+
+[[programs]]
+name = "transferhook"
+id = "bark8LXsP1oCtaFM2KdQpBvXgEVWPZ1nm5hecFFUFeX"
+
+[provider]
+cluster = "devnet"
+wallet = "./programs/keypairs/BARKGS2fkgqJrbjqvs5HEenLRatKJ6VJruGGqJ2Xmkoq.json"

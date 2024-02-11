@@ -1,4 +1,4 @@
-# BARK Documentation
+# BARK Token
 
 ## Overview
 
